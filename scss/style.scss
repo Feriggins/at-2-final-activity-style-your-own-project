@@ -1,0 +1,66 @@
+// main.scss
+@import 'variables';
+@import 'mixins';
+@import 'functions';
+@import 'cards';
+
+body {
+  @include flex-center(column, center, center, $gap);
+  background-image: radial-gradient($background-start-color, $background-end-color);
+  min-height: 100vh;
+  color: $text-color;
+
+  .button {
+    @include button-styles($button-bg, $button-color, 15px, $button-shadow);
+
+    &:hover {
+      background-color: $button-hover-bg;
+      color: #fff;
+    }
+
+    &:active {
+      background-color: $button-hover-bg;
+      box-shadow: 0 5px darken($button-shadow, 20%);
+      transform: translateY(4px);
+    }
+  }
+
+  .face-down {
+    background: #222;
+  }
+
+  #dealer-hand {
+    width: $dealer-hand-width;
+    height: $dealer-hand-height;
+    border: 10px solid black;
+    margin: auto;
+  }
+
+  .card {
+    color: transparent;
+    border-radius: $card-border-radius;
+    height: rem-calc(120);
+    width: rem-calc(75);
+    padding: rem-calc(20);
+    font-size: 3rem;
+  }
+
+  #dealer-hand, #player-hand {
+    @include flex-center(row, flex-start, flex-start, 6px);
+    padding: rem-calc(20);
+  }
+
+  #scores {
+    position: absolute;
+    top: 2vh;
+    left: 2vh;
+  }
+
+  .hand {
+    min-width: 60vw;
+    height: 12rem;
+    border: $hand-border;
+    border-radius: $hand-border-radius;
+    @include flex-center(row, center, center);
+  }
+}

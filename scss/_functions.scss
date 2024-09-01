@@ -1,0 +1,8 @@
+@function darken($color, $amount: 10%) {
+    @return mix(black, $color, $amount);
+  }
+  
+  @function rem-calc($pixels) {
+    @return $pixels / 16 * 1rem;
+  }
+  

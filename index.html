@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlackJack</title>
+    <link rel="stylesheet" href="scss/style.css">
+</head>
+<body>
+    
+
+    <div id="scores">
+        <button class="button" onclick="start()">Start</button>
+        <button class="button" onclick="resetGame()">Reset</button>
+        <h2> dealer: <span id="dealerScore"></span></h2>
+        <h2> player: <span id="playerScore"></span></h2>
+    </div>
+        
+
+    <div id="dealer-hand" class="hand"> dealer-hand</div>
+    
+
+    <div id="controls">
+        <div id="status" ></div>
+        <button class="button" onclick="playOurTurn(true)">HIT</button>
+        <button class="button" onclick="playOurTurn(false)">HOLD</button>
+    </div>
+
+
+
+    <div id="player-hand" class="hand">Player Hand</div>
+
+
+
+    
+
+
+
+
+        
+
+            <script src="deal.js">       </script>
+</body>
+</html>

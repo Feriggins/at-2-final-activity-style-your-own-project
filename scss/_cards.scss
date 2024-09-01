@@ -1,0 +1,20 @@
+// _cards.scss
+
+$card-suits: (
+  C: "clubs",
+  D: "diamonds",
+  H: "hearts",
+  S: "spades"
+);
+
+$card-values: 2, 3, 4, 5, 6, 7, 8, 9, 10, jack, queen, king, ace;
+
+@each $suit, $suit-name in $card-suits {
+  @each $value in $card-values {
+    // Construct the class name using the value and suit
+    ._#{$value}#{$suit} {
+      // Construct the background image path correctly
+      @include card-background("/assets/cards/#{$value}_of_#{$suit-name}.png");
+    }
+  }
+}
